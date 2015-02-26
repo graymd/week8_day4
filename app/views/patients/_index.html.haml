@@ -1,0 +1,24 @@
+.index-data
+  - x = 0
+  - y = 1
+  %ul{class: "patient_list"}     
+    - @patients.each_slice(10) do |row|
+      %li{class: "section_#{x+1}"}
+        - x = x + 1
+        - row.each do |patient|
+          .col-md-3
+            .list-group-item
+              = link_to (patient[:last_name] + ', ' + patient[:first_name]), clinic_patient_path(@clinic, patient)
+            %br
+        %br 
+      %br
+  .col-md-12.text-center
+    %ul{class: "link_list" }
+      - x.times do
+        %li{class: "link_#{y}"}
+          %a{class: "link_#{y}", patient_num: y} 
+            = "page #{y}"
+          = "|"
+        - y += 1
+  %br
+  %br

@@ -1,0 +1,69 @@
+.col-md-6.col-md-offset-3
+  .jumbotron
+    .text-center
+      %strong
+        %h3
+          %u
+            Patient:
+            = @patient.last_name + ", " + @patient.first_name
+      = render 'patients/patient_workflow_state'
+      %br
+      = link_to "Edit Patient/Medication", edit_clinic_patient_path(@clinic, @patient)
+      |
+      = link_to "Delete Patient", clinic_patient_path(@clinic, @patient), method: :delete
+      %br
+      = link_to "Return to Clinic", clinic_path(@clinic)
+      |
+      = link_to "Return to Main", root_path
+      %br
+  %p{class: "text-left"}
+    .list-group-item
+      %strong DOB:
+      = @patient.date_of_birth
+      %br/
+      %strong Symptoms:
+      = @patient.description
+      %br/
+      %strong Gender:
+      = @patient.gender
+      %br/
+      %strong Blood Type:
+      = @patient.blood_type
+      %br/
+      
+    %br/
+    .list-group-item
+      .text-center
+        .h4
+          %strong Patient Medications:
+        %ul
+          - @medications.each do |medication|
+            %li
+              = link_to medication.name, medication_path(medication)
+            %br  
+    %br
+    .list-group-item
+      .text-center
+        .h4
+          %strong Patient Doctor(s) Name:
+        = form_tag clinic_patient_path(@clinic, @patient), method: :get, class: "navbar-form", role: "search" do
+          .input-group
+            = text_field_tag 'q', params[:q], class: "form-control", id: "srch-term", placeholder: "Search Doctors"
+            .input-group-btn
+              %button.btn.btn-default{:style => "width:40px;"}
+                %i.glyphicon.glyphicon-search
+      %br          
+      %ul
+        - @doctors.each do |doctor|
+          %li
+            = doctor.doctor_name
+            = link_to "Remove Doctor", destroy_doctor_clinic_patient_path(@patient, doctor), method: :delete
+          %br
+
+      .text-center
+        = form_for @doctor, url: create_doctor_clinic_patient_path(@clinic, @patient) do |f|
+          .form_group
+            = f.label :doctor_name
+            = f.text_area :doctor_name, class: "form-control"
+            %br
+            = f.submit "Add Doctor", class: "btn btn-primary"

@@ -1,0 +1,82 @@
+.col-md-12
+  .col-md-6.col-md-offset-3
+    .jumbotron
+      .text-center
+        %strong
+          %h3
+            %u
+              =@clinic.name
+          = @clinic.st_address
+          %br/
+          = @clinic.city + ", "
+          = @clinic.state
+          %br
+          %br
+          = link_to "Edit Clinic", edit_clinic_path(@clinic)
+          |
+          = link_to "Delete Clinic", clinic_path(@clinic), method: :delete
+          %br
+          = link_to "Return to Clinics", clinics_path
+          |
+          = link_to "Return to Main", root_path
+  %div.col-md-6.col-md-offset-3
+    .list-group-item
+      .text-center
+        %strong
+          %u
+            %h4
+              Patients: 
+        = link_to "View Patient Index", clinic_patients_path(@clinic)
+        |
+        = link_to "Add Patient", new_clinic_patient_path(@clinic)
+      %ul
+      - @patients.each do |patient|
+        %li
+          = link_to patient.last_name + ", " + patient.first_name, clinic_patient_path(@clinic, patient)
+          = '|'
+          = workflow_state_helper(patient)
+        %br
+    %br
+    .list-group-item
+      .text-center
+        %strong Clinic Doctors:
+        %br
+        = form_tag clinic_path(@clinic), method: :get, class: "navbar-form", role: "search" do
+          .input-group
+            = text_field_tag 'q2', params[:q2], class: "form-control", id: "srch-term", placeholder: "Search Doctors"
+            .input-group-btn
+              %button.btn.btn-default{:style => "width:40px;"}
+                %i.glyphicon.glyphicon-search
+        %br
+        - @doctors.each do |doctor|
+          = doctor.doctor_name
+          = link_to "Delete Doctor", destroy_doctor_clinic_path(doctor), method: :delete
+          %br
+        %br
+        = form_for @doctor, url: create_doctor_clinic_path(@clinic) do |f|
+          .form_group
+            = f.label :doctor_name
+            = f.text_field :doctor_name, class: "form-control"
+            %br/
+          = f.submit "Add Doctor", class: "btn btn-primary"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

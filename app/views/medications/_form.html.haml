@@ -1,0 +1,37 @@
+= form_for([@medication]) do |f|
+  - if @medication.errors.any?
+    - @medication.errors.full_messages.each do |message|
+      = message
+      %br
+.list-group-item.text-center
+  =form_for [@medication] do |f|
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control name_field"
+      %span.error_name
+        Medication name required
+    .form-group
+      = f.label :company
+      = f.text_field :company, class: "form-control"
+    .form-group
+      = f.label :adverse_reactions
+      = f.text_area :adverse_reactions, class: "form-control"
+    .list-group-item
+      = f.label :generic_option
+      = f.radio_button(:generic_option, 1)
+      = f.label(:generic_option, "yes")
+      = f.radio_button(:generic_option, 0)
+      = f.label(:generic_option, "no")
+    %br
+    .list-group-item
+      %strong
+        = "Patients using:"
+      .text-left
+        .checkbox
+          - @patients.each do |patient|
+            %label
+              = check_box_tag 'medication[patient_ids][]', patient.id, @medication.patients.include?(patient)
+              = patient.last_name + ', ' + patient.first_name
+            %br
+    %br
+    = f.submit "Submit", class: "btn btn-primary submit"

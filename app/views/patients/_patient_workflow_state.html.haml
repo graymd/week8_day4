@@ -1,0 +1,6 @@
+.container.content
+  = "Patient Status: "
+  = workflow_state_helper(@patient)
+  %br
+  = patient_state_links(@patient, @clinic)
+  %br
