@@ -13,7 +13,6 @@ class ClinicsController < ApplicationController
     @clinic = Clinic.find params[:id]
     @patients = @clinic.patients
     @doctor = Doctor.new
-    # @doctors = @clinic.doctors
     @doctors = if !params[:q2].blank?
       @clinic.doctors.where("doctor_name LIKE ?", "%#{params[:q2]}%")
     else
@@ -26,8 +25,8 @@ class ClinicsController < ApplicationController
   end
 
   def create
-    @clinic = Clinic.create my_params
-    if @clinic.save
+    @clinic = Clinic.new my_params
+    if @clinic.save 
       flash[:notice] = "Clinic info was successfully saved."
       redirect_to clinics_path
     else

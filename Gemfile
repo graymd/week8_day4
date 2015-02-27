@@ -66,6 +66,9 @@ group :development, :test do
   #clean out db after running factory girl
   gem 'database_cleaner'
 
+  #shows coverage of testing for project
+  gem 'simplecov', :require => false
+
 
   #makes tests easier on the fingers and eyes: https://github.com/thoughtbot/shoulda
   gem 'shoulda'

@@ -52,7 +52,7 @@ RSpec.describe PatientsHelper, type: :helper do
   expect(subject.current_state).to eq('left')
   end
 
-  # it ""
+  # it "should have links"
 
 
 
