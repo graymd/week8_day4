@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.9.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.9.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.9.0/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.9.0/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.9.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.9.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-26T16:50:04-05:00">2015-02-26T16:50:04-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-02-26T23:09:47-05:00">2015-02-26T23:09:47-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">78.59%</span></span>
+    (<span class="covered_percent"><span class="yellow">82.98%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.16
+         1.23
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>26</b> files in total.
-    <b>355</b> relevant lines. 
-    <span class="green"><b>279</b> lines covered</span> and
-    <span class="red"><b>76</b> lines missed </span>
+    <b>382</b> relevant lines. 
+    <span class="green"><b>317</b> lines covered</span> and
+    <span class="red"><b>65</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#5f26a322b5c0eab049be6f300e08900e9cc3d167" class="src_link" title="app/controllers/clinics_controller.rb">app/controllers/clinics_controller.rb</a></td>
-        <td class="red strong">62.0 %</td>
+        <td class="yellow strong">84.0 %</td>
         <td>107</td>
         <td>50</td>
-        <td>31</td>
-        <td>19</td>
-        <td>1.5</td>
+        <td>42</td>
+        <td>8</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -283,11 +283,11 @@
       <tr>
         <td class="strong"><a href="#884bb835a5dbc12b1bf12c93f8d652247b7c1f34" class="src_link" title="spec/controllers/clinics_controller_spec.rb">spec/controllers/clinics_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>191</td>
-        <td>107</td>
-        <td>107</td>
+        <td>223</td>
+        <td>134</td>
+        <td>134</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -307,7 +307,7 @@
         <td>27</td>
         <td>25</td>
         <td>2</td>
-        <td>2.6</td>
+        <td>3.1</td>
       </tr>
       
     </tbody>
@@ -377,11 +377,11 @@
         <div class="source_table" id="5f26a322b5c0eab049be6f300e08900e9cc3d167">
   <div class="header">
     <h3>app/controllers/clinics_controller.rb</h3>
-    <h4><span class="red">62.0 %</span> covered</h4>
+    <h4><span class="yellow">84.0 %</span> covered</h4>
     <div>
       <b>50</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
-      <span class="red"><b>19</b> lines missed.</span>
+      <span class="green"><b>42</b> lines covered</span> and
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
   
@@ -616,8 +616,8 @@
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
           
           <code class="ruby">    @clinic = Clinic.find params[:id]</code>
         </li>
@@ -640,26 +640,26 @@
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
+        <li class="covered" data-hits="3" data-linenumber="43">
+          <span class="hits">3</span>
           
           <code class="ruby">    @clinic = Clinic.find params[:id]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
-          
+        <li class="covered" data-hits="3" data-linenumber="44">
+          <span class="hits">3</span>
           
           <code class="ruby">    if @clinic.update my_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
-          
+        <li class="covered" data-hits="2" data-linenumber="45">
+          <span class="hits">2</span>
           
           <code class="ruby">      flash[:notice] = &quot;Clinic info successfully updated.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
-          
+        <li class="covered" data-hits="2" data-linenumber="46">
+          <span class="hits">2</span>
           
           <code class="ruby">      redirect_to clinic_path(@clinic)</code>
         </li>
@@ -670,14 +670,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
-          
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
           
           <code class="ruby">      flash[:alert] = &quot;Clinic info was NOT successfully updated.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
-          
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
           
           <code class="ruby">      render :edit</code>
         </li>
@@ -706,26 +706,26 @@
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
           <code class="ruby">    @clinic = Clinic.find params[:id]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
-          
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
           
           <code class="ruby">    @clinic.destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="56">
-          
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
           
           <code class="ruby">    flash[:notice] = &quot;Clinic was successfully deleted.&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="57">
-          
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
           
           <code class="ruby">    redirect_to clinics_path</code>
         </li>
@@ -832,8 +832,8 @@
           <code class="ruby">  def my_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="75">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="5" data-linenumber="75">
+          <span class="hits">5</span>
           
           <code class="ruby">    params.require(:clinic).permit(</code>
         </li>
@@ -3979,8 +3979,8 @@
     <h3>spec/controllers/clinics_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>107</b> relevant lines. 
-      <span class="green"><b>107</b> lines covered</span> and
+      <b>134</b> relevant lines. 
+      <span class="green"><b>134</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4018,10 +4018,10 @@
           <code class="ruby">  let(:clinic) {</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="6">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="12" data-linenumber="6">
+          <span class="hits">12</span>
           
-          <code class="ruby">    Clinic.create({name: &#39;Clinic1&#39;})</code>
+          <code class="ruby">    Clinic.create({ name: &#39;Clinic1&#39; })</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -4933,19 +4933,19 @@
         <li class="never" data-hits="" data-linenumber="158">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="159">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="covered" data-hits="1" data-linenumber="160">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  describe &#39;GET #edit&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="161">
@@ -4954,28 +4954,28 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="162">
+        <li class="covered" data-hits="1" data-linenumber="162">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;should show edit for a clinic object&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="163">
+        <li class="covered" data-hits="1" data-linenumber="163">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      get :edit, id: clinic</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="164">
+        <li class="covered" data-hits="1" data-linenumber="164">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">end</code>
+          <code class="ruby">      expect(assigns(:clinic)).to eq(clinic)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="165">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="166">
@@ -4987,121 +4987,121 @@
         <li class="never" data-hits="" data-linenumber="167">
           
           
-          <code class="ruby"># expect{ post :create, contact: Factory.attributes_for(:contact) }.to change(Contact,:count).by(1)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="168">
           
           
-          <code class="ruby">  # it &quot;should save the menu item&quot; do</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="169">
+        <li class="covered" data-hits="1" data-linenumber="169">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   @menu_item.should_receive(:save).and_return(true)</code>
+          <code class="ruby">  describe &#39;PATCH #update&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="170">
           
           
-          <code class="ruby">  #   do_create</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="171">
           
           
-          <code class="ruby">  # end</code>
+          <code class="ruby">    # def update</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="172">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#     @clinic = Clinic.find params[:id]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="173">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#     if @clinic.update my_params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="174">
           
           
-          <code class="ruby"># def create</code>
+          <code class="ruby">#       flash[:notice] = &quot;Clinic info successfully updated.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="175">
           
           
-          <code class="ruby">#     @clinic = Clinic.create my_params</code>
+          <code class="ruby">#       redirect_to clinic_path(@clinic)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="176">
           
           
-          <code class="ruby">#     if @clinic.save</code>
+          <code class="ruby">#     else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="177">
           
           
-          <code class="ruby">#       flash[:notice] = &quot;Clinic info was successfully saved.&quot;</code>
+          <code class="ruby">#       flash[:alert] = &quot;Clinic info was NOT successfully updated.&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="178">
           
           
-          <code class="ruby">#       redirect_to clinics_path</code>
+          <code class="ruby">#       render :edit</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="179">
           
           
-          <code class="ruby">#     else</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="180">
           
           
-          <code class="ruby">#       flash[:alert] = &quot;Clinic info was NOT successfully saved.&quot;</code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="181">
           
           
-          <code class="ruby">#       render :new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="182">
-          
-          
-          <code class="ruby">#     end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="183">
-          
-          
-          <code class="ruby">#   end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="184">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="185">
+        <li class="covered" data-hits="1" data-linenumber="182">
+          <span class="hits">1</span>
           
+          <code class="ruby">  it &#39;should assign a clinic id&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="183">
+          <span class="hits">1</span>
           
-          <code class="ruby"></code>
+          <code class="ruby">    patch :update, id: clinic, clinic: { name: &#39;Clinic&#39;}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="184">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(assigns(:clinic)).to eq(clinic)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="185">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(clinic.name).to eq(&#39;Clinic1&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="186">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="187">
@@ -5110,25 +5110,217 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="188">
+        <li class="covered" data-hits="1" data-linenumber="188">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;should update a clinic successfully&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="189">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      patch :update, id: clinic, :clinic=&gt;clinic.attributes = {:name=&gt;&quot;Updated Name&quot;}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="190">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(clinic.name).to eq(&#39;Updated Name&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="191">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(flash[:notice]).to eq(&#39;Clinic info successfully updated.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="192">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to redirect_to clinic_path(clinic)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="193">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="194">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="189">
+        <li class="covered" data-hits="1" data-linenumber="195">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;should update a clinic unsuccessfully&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="196">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      patch :update, id: clinic, clinic:{ name: &#39;&#39; }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="197">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(clinic.name).not_to eq(&#39;&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="198">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(flash[:alert]).to eq(&#39;Clinic info was NOT successfully updated.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="199">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to render_template(&#39;edit&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="200">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="201">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="190">
+        <li class="never" data-hits="" data-linenumber="202">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="203">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="191">
+        <li class="covered" data-hits="1" data-linenumber="204">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;DELETE #destroy&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="205">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="206">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    let!(:clinic4) {</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="207">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Clinic.create({ name: &quot;Hello&quot;})</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="208">
+          
+          
+          <code class="ruby">    }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="209">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="210">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;should destroy clinic object&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="211">
+          <span class="hits">1</span>
+          
+          <code class="ruby">     expect{</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="212">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      delete :destroy, id: clinic4</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="213">
+          
+          
+          <code class="ruby">      }.to change(Clinic, :count).by(-1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="214">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(flash[:notice]).to eq(&#39;Clinic was successfully deleted.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="215">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to redirect_to clinics_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="216">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="217">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="218">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="219">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="220">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="221">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="222">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="223">
           
           
           <code class="ruby"></code>
@@ -5722,8 +5914,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="72">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="21" data-linenumber="72">
+          <span class="hits">21</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :transaction</code>
         </li>
@@ -5770,8 +5962,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="80">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="21" data-linenumber="80">
+          <span class="hits">21</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -5794,8 +5986,8 @@
           <code class="ruby">  config.after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="84">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="21" data-linenumber="84">
+          <span class="hits">21</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe ClinicsController do
   
   let(:clinic) {
-    Clinic.create({name: 'Clinic1'})
+    Clinic.create({ name: 'Clinic1' })
   }
 
 
@@ -155,37 +155,58 @@ describe ClinicsController do
       expect(response).to render_template('new')
     end
 
+  end
+
+  describe 'GET #edit' do
+
+    it 'should show edit for a clinic object' do
+      get :edit, id: clinic
+      expect(assigns(:clinic)).to eq(clinic)
+    end
+
+  end
+
+  describe 'PATCH #update' do
+
+    it 'should assign a clinic id' do
+      patch :update, id: clinic, clinic: { name: 'Clinic'}
+      expect(assigns(:clinic)).to eq(clinic)
+      expect(clinic.name).to eq('Clinic1')
+    end
+
+    it 'should update a clinic successfully' do
+      patch :update, id: clinic, :clinic=>clinic.attributes = {:name=>"Updated Name"}
+      expect(clinic.name).to eq('Updated Name')
+      expect(flash[:notice]).to eq('Clinic info successfully updated.')
+      expect(response).to redirect_to clinic_path(clinic)
+    end
+
+    it 'should update a clinic unsuccessfully' do
+      patch :update, id: clinic, clinic:{ name: '' }
+      expect(clinic.name).not_to eq('')
+      expect(flash[:alert]).to eq('Clinic info was NOT successfully updated.')
+      expect(response).to render_template('edit')
+    end
+
+  end
+
+  describe 'DELETE #destroy' do
+    
+    let!(:clinic4) {
+      Clinic.create({ name: "Hello"})
+    }
+
+    it 'should destroy clinic object' do
+     expect{
+      delete :destroy, id: clinic4
+      }.to change(Clinic, :count).by(-1)
+      expect(flash[:notice]).to eq('Clinic was successfully deleted.')
+      expect(response).to redirect_to clinics_path
+    end
 
   end
 
 
-
-
 end
-
-
-# expect{ post :create, contact: Factory.attributes_for(:contact) }.to change(Contact,:count).by(1)
-  # it "should save the menu item" do
-  #   @menu_item.should_receive(:save).and_return(true)
-  #   do_create
-  # end
-
-
-# def create
-#     @clinic = Clinic.create my_params
-#     if @clinic.save
-#       flash[:notice] = "Clinic info was successfully saved."
-#       redirect_to clinics_path
-#     else
-#       flash[:alert] = "Clinic info was NOT successfully saved."
-#       render :new
-#     end
-#   end
-
-
-
-
-
-
 
 
