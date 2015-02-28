@@ -13,11 +13,6 @@ class MedicationsController < ApplicationController
     @patients = @medication.patients
   end
 
-    # @clinic = Clinic.find params[:clinic_id]
-    # @patient = @clinic.patients.find params[:patient_id]
-    # @medication = @patient.medications.new
-
-
   def new
     @medication = Medication.new
     @patients = Patient.all
@@ -56,6 +51,7 @@ class MedicationsController < ApplicationController
   def destroy
     @medication = Medication.find params[:id]
     @medication.delete
+    flash[:notice] = "Medication was successfully deleted."
     redirect_to medications_path
   end
 
