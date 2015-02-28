@@ -64,7 +64,6 @@ class ClinicsController < ApplicationController
   end
 
   def destroy_doctor
-    # @clinic = Clinic.find params[:id]
     @doctor = Doctor.find params[:id]
     @doctor.destroy
     redirect_to @doctor.doctorable

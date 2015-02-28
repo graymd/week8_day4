@@ -6,7 +6,6 @@ describe ClinicsController do
     Clinic.create({ name: 'Clinic1' })
   }
 
-
   describe 'GET #index' do
     let!(:clinic1) {
       Clinic.create({ name: "Hello"})
@@ -206,7 +205,42 @@ describe ClinicsController do
 
   end
 
+  describe 'POST #create_doctor' do
+
+    it 'should create a doctor object' do
+      post :create_doctor, id: clinic, doctor: { doctor_name: "Kitter", doctorable: clinic }
+      expect(assigns(:clinic)).to eq(clinic)
+      expect(assigns(:doctor).class).to eq(Doctor)
+      expect(assigns(:doctor).doctorable_id).to eq(clinic.id)
+      expect(assigns(:doctor).doctorable_type).to eq "Clinic"
+      expect(response).to redirect_to clinic_path(clinic)
+    end
+
+  end
+
+  describe 'DELETE #destry_doctor' do
+
+  let!(:doctor4) {
+    Doctor.create({ doctor_name: "Kitter", doctorable: clinic})
+  }
+
+    it 'should delete a doctor object' do
+     expect{
+      delete :destroy_doctor, id: doctor4
+     }.to change(Doctor, :count).by(-1)
+     expect(response).to redirect_to doctor4.doctorable
+
+    end
+
+  end
+
+  # describe 'GET #set_clinic' do
+
+  #   it 'should set a clinic object' do
+  #     get :set_clinic, id: clinic
+  #     expect(assigns(:clinic)).to eq(clinic)
+  #   end
+
+  # end
 
 end
-
-
