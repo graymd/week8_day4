@@ -5,7 +5,6 @@ FactoryGirl.define do
     city "Charleston"
     state "SC"
   end
-
   factory :patient do
     clinic
     first_name "Maddie"

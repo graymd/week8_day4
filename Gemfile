@@ -69,6 +69,9 @@ group :development, :test do
   #shows coverage of testing for project
   gem 'simplecov', :require => false
 
+  #easy testing of state machine
+  gem 'state_machine_rspec'
+
 
   #makes tests easier on the fingers and eyes: https://github.com/thoughtbot/shoulda
   gem 'shoulda'
